@@ -1,0 +1,11 @@
+@mixin body-site {
+    font-family: Helvetica;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+
+@mixin main-container {
+    margin:50px;
+    min-height: 250px;
+}

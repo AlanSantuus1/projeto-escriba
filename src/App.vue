@@ -1,30 +1,38 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <NavBar :logo="logo_src" :alt="app_name" />
   <router-view/>
+  <Footer></Footer>
 </template>
+<script>
+  import NavBar from './components/NavBar.vue'
+  import Footer from './components/Footer.vue'
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  export default {
+    components: {
+      NavBar, Footer
+    },
+    data() {
+      return {
+        logo_src: "/img/logo.png",
+        app_name: "ESCRIBA"
+      }
+    }
+  }
+</script>
+<style lang="scss">
+@import "./assets/scss/index.scss";
+
+* {
+  @include body-site;
 }
 
-nav {
-  padding: 30px;
+.main-container {
+  margin:50px;
+  min-height: 500px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+h1 {
+  @include title;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

@@ -1,0 +1,13 @@
+@import "./_colors.scss";
+
+@mixin footer {
+    height: 200px;
+    background-color: $dark-grey;
+    border-top: 4px solid $black;
+    color: $yellow;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+}

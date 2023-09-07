@@ -1,0 +1,43 @@
+@import "./colors";
+
+@mixin form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+@mixin input-container {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+@mixin input {
+    padding: 10px 10px;
+    width: 400px;
+    border-radius: 2px;
+}   
+
+@mixin label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: $dark-grey;
+    padding: 5px 10px;
+    border-left: 4px solid $yellow;
+}
+
+@mixin button {
+    background-color: $dark-grey;
+    color: $yellow;
+    font-weight: bold;
+    border: 2px solid $dark-grey;
+    padding: 15px;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .5s;
+}
+
+@mixin button-hover {
+    background-color: transparent;
+    color: $dark-grey;
+}
