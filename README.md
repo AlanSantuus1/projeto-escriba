@@ -1,4 +1,4 @@
-# escriba
+# Projeto Escriba
 
 ## Project setup
 ```
