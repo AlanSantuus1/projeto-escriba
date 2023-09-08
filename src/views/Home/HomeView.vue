@@ -7,29 +7,12 @@
 
 <script>
 import PeopleForm from "../../components/PeopleForm.vue"
-import People from "../../services/people"
 
 export default {
   name: 'HomeView',
   components: {
     PeopleForm
   },
-  data (){
-    return {
-      pessoa: {
-        nome: "",
-        cpf: "",
-        dataNasc: ""
-      },
-      pessoas: []
-    }
-  }, 
-  mounted() {
-    People.list().then(res => {
-      console.log(res.data);
-      this.pessoas = res.data;
-    })
-  }
 }
 </script> 
 

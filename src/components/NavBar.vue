@@ -4,7 +4,10 @@
             <img :src="logo" :alt="alt" id="logo">
         </router-link>
         <router-link to="/">Cadastrar Nova Pessoa</router-link> |
-        <router-link to="/pessoas">Lista de Cadastros</router-link>
+        <router-link to="/cadastrar-pedido">Cadastrar Novo Pedido</router-link> |
+        <router-link to="/pessoas">Lista de Cadastros</router-link> |
+        <router-link to="/pedidos">Lista de Pedidos</router-link>
+
     </nav>
 </template>
 <script>

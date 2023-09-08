@@ -6,13 +6,13 @@
                 <div class="input-container">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" v-model="pessoa.nome" placeholder="Digite o seu nome">
-                    <span v-show="campoObgNome" style="color: red; font-size: small;">Campo nome é obrigatório!*</span>
+                    <span v-show="campoObgNome" style="color: red; font-size: small;">Campo <strong>nome</strong> é obrigatório!*</span>
                 </div>
                 <div class="input-container">
                     <label for="cpf">CPF:</label>
                     <input type="text" id="cpf" name="cpf" v-model="pessoa.cpf" placeholder="Digite o seu CPF" >
-                    <span v-show="campoObgCpf" style="color: red; font-size: small;">Campo CPF é obrigatório!*</span>
-                    <span v-show="campoInvalidoCpf" style="color: red; font-size: small;">Campo CPF inválido!*</span>
+                    <span v-show="campoObgCpf" style="color: red; font-size: small;">Campo <strong>CPF</strong> é obrigatório!*</span>
+                    <span v-show="campoInvalidoCpf" style="color: red; font-size: small;">Campo <strong>CPF</strong> inválido!*</span>
                 </div> 
                 <div class="input-container">
                     <label for="dataNascimento">Data de Nascimento</label>
