@@ -28,10 +28,6 @@ Este projeto utiliza as seguintes tecnologias e ferramentas:
 ```
 git clone https://github.com/AlanSantuus1/projeto-escriba.git
 ```
-### Verifique que está dentro da pasta "projeto-escriba-main"
-```
-cd projeto-escriba-main
-```
 ### Instalar dependências
 ```
 npm install
@@ -40,9 +36,13 @@ npm install
 ```
 npm run backend
 ```
-### Rodar a aplicação
+### Em uma outra janela de terminal execute este comando para rodar a aplicação
 ```
 npm run serve
+```
+### Em caso de erro, verifique se o terminal está dentro do arquivo projeto-escriba-main
+```
+cd projeto-escriba-main
 ```
 
 ### Git, GitHub e Histórico de Commits

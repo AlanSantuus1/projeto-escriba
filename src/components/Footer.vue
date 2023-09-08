@@ -1,6 +1,6 @@
 <template>
     <footer id="footer">
-        <p>Escriba Informática &copy; 2021</p>
+        <p>Escriba Informática &copy; 2023</p>
     </footer>
 </template>
 <script>
