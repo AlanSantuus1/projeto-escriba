@@ -4,26 +4,10 @@ Esta é uma aplicação web em Vue.js, que acessa a base de dados de uma API RES
 
 ## Sumário
 - [Bem-vindo!](#bem-vindo)
-- [Visualização](#visualização)
 - [Contexto](#contexto)
 - [Tecnologias e Ferramentas Utilizadas](#tecnologias-e-ferramentas-utilizadas)
 - [Instalação e Execução](#instalação-e-execução)
-- [Notas](#notas)
   - [Git, GitHub e Histórico de Commits](#git-github-e-histórico-de-commits)
-  - [Lint](#lint)
- 
-## Visualização
-### Visualização para dispositivos móveis
-A aplicação foi desenvolvida com design responsivo e pensada para ser utilizada em dispositivos móveis. Sugerimos a vizualiação em resolução `360x640` pixels para a melhor experiência possível.
-
-<!-- **Visualização:** -->
-
-<div align="center">
-
-![appReceitas](https://user-images.githubusercontent.com/98184355/221451995-4efe8014-ce9e-4e2f-92f8-87365750df13.gif)
-
-</div>
-
 
 ## Contexto
 Esta é uma ferramenta que acessa as bases de dados de clientes e pedidos, permitindo ao usuário:
