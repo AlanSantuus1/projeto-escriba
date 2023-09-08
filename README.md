@@ -28,19 +28,20 @@ Este projeto utiliza as seguintes tecnologias e ferramentas:
 ```
 git clone https://github.com/AlanSantuus1/projeto-escriba.git
 ```
-### Instalar dependências
+### Verifique que está dentro da pasta "escriba"
 ```
 cd escriba
+```
+### Instalar dependências
+```
 npm install
 ```
 ### Rodar a api
 ```
-cd escriba
 npm run backend
 ```
 ### Rodar a aplicação
 ```
-cd escriba
 npm run serve
 ```
 
