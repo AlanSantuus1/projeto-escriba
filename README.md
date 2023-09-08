@@ -7,7 +7,7 @@ Esta é uma aplicação web em Vue.js, que acessa a base de dados de uma API RES
 - [Contexto](#contexto)
 - [Tecnologias e Ferramentas Utilizadas](#tecnologias-e-ferramentas-utilizadas)
 - [Instalação e Execução](#instalação-e-execução)
-  - [Git, GitHub e Histórico de Commits](#git-github-e-histórico-de-commits)
+- [Git, GitHub e Histórico de Commits](#git-github-e-histórico-de-commits)
 
 ## Contexto
 Esta é uma ferramenta que acessa as bases de dados de clientes e pedidos, permitindo ao usuário:
