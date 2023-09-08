@@ -28,9 +28,9 @@ Este projeto utiliza as seguintes tecnologias e ferramentas:
 ```
 git clone https://github.com/AlanSantuus1/projeto-escriba.git
 ```
-### Verifique que está dentro da pasta "escriba"
+### Verifique que está dentro da pasta "projeto-escriba-main"
 ```
-cd escriba
+cd projeto-escriba-main
 ```
 ### Instalar dependências
 ```
