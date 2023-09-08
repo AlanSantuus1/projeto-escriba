@@ -3,8 +3,8 @@
         <router-link to="/" id="logo-url">
             <img :src="logo" :alt="alt" id="logo">
         </router-link>
-        <router-link to="/">Cadastrar</router-link> |
-        <router-link to="/pessoas">Pessoas</router-link>
+        <router-link to="/">Cadastrar Nova Pessoa</router-link> |
+        <router-link to="/pessoas">Lista de Cadastros</router-link>
     </nav>
 </template>
 <script>

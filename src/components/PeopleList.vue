@@ -1,7 +1,31 @@
 <template>
     <div>
-        
-        <div>
+        <div id="people-table">
+            <div>
+                <div id="people-table-heading">
+                    <div class="people-id">#</div>
+                    <div>Nome</div>
+                    <div>CPF</div>
+                    <div>Data de Nascimento</div>
+                    <div class="header-actions">AÇÕES</div> 
+                </div>
+            </div>
+            <div id="people-table-rows">
+                <div class="people-table-row" v-for="pessoa in pessoas" :key="pessoa.id">
+                    <div class="people-number">{{ pessoa.id }}</div>
+                    <div>{{ pessoa.nome }}</div>
+                    <div>{{ pessoa.cpf }}</div>
+                    <div>{{ pessoa.dataNascimento }}</div>
+                    <div id="btn-actions">
+                        <button @click="edit(pessoa)" class="edit-btn">EDITAR</button>
+                        <button @click="remove(pessoa)" class="delete-btn">EXCLUIR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-show="form">
+            <br><br><br>
+            <h1>Editar Pessoa</h1>
             <form id="people-form" @submit.prevent="save">
                 <div class="input-container">
                     <label for="nome">Nome:</label>
@@ -19,31 +43,60 @@
                     <input type="text" id="dataNasc" name="dataNasc" v-model="pessoa.dataNascimento" placeholder="Digite o sua data de nascimento">
                 </div>
                 <div class="input-container">
-                    <input type="submit" class="submit-btn" value="Finalizar Cadastro">
+                    <input type="submit" class="submit-btn" value="Salvar">
                 </div>
             </form>
         </div>
     </div>
 </template>
 <script>
-import People from "../services/people";
+import People from "../services/people"
 
 export default {
-     name: "PeopleForm",
-     data() {
+    name: 'PeopleList',
+    data() {
         return {
+            pessoas: [],
+            pessoa_id: null,
             pessoa: {
-                id: '', 
+                id: null,
                 nome: '',
                 cpf: '',
                 dataNascimento: ''
             },
+            form: false,
             campoObgNome: false,
             campoObgCpf: false,
             campoInvalidoCpf: false
         }
-     },
-     methods: {
+    },
+    methods: {
+        async listPeople() {
+            People.list().then(res => {
+                console.log(res.data);
+                this.pessoas = res.data;
+            })
+
+        },
+        async edit(pessoa){
+            this.form = true
+            this.pessoa = pessoa;
+        },
+        async remove(pessoa){
+            if(confirm('Deseja excluir este cadastro?')){
+                People.apagar(pessoa).then(res => {
+                    this.listPeople()
+                    this.errors = []
+                    alert("Cadastro apagado com sucesso!")
+                }).catch(e => {
+                    this.errors = e.response.data.errors;
+                    console.log(this.errors)
+                    alert("Algo deu errado :/. Tente novamente mais tarde.")
+                })
+            }
+
+            
+        },
         async save(){
             if(this.pessoa.nome == ''){
                 this.campoObgNome = true
@@ -66,12 +119,14 @@ export default {
             }
             
             if(!this.campoObgNome && !this.campoObgCpf && !this.campoInvalidoCpf){
-                People.save(this.pessoa).then(() => {
-                    alert('Salvo com sucesso!')
+                People.edit(this.pessoa).then(() => {
+                    alert('Atualizado com sucesso!');
+                    this.listPeople();
                 }).catch(e => {
                     alert('Algo deu errado :/. Tente novamente mais tarde.') 
                 })
                 this.pessoa = {}
+                this.form = false
             }
         },
         validCpf(strCPF){
@@ -95,37 +150,56 @@ export default {
             if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
             return true;
         }
-     }
+    },
+    mounted() {
+        this.listPeople();
+    }
 }
 </script>
 <style lang="scss">
 @import "../assets/scss/index.scss";
 
-#people-form {
-    @include form;
+#people-table {
+    @include table;
 }
 
-.input-container {
-    @include input-container;
+#people-table-heading,
+#people-table-rows,
+.people-table-row {
+    @include rows;
 }
 
-input {
-    @include input;
+#people-table-heading {
+    @include heading;
 }
 
-label {
-    @include label;
+#people-table-heading div,
+.people-table-row div {
+    width: 19%;
 }
 
-.submit-btn {
-    @include button;
+.people-table-row {
+    @include row;
 }
 
-.submit-btn:hover {
-    @include button-hover;
+#people-table-heading .people-id,
+.people-table-row .people-number {
+    width: 5%;
 }
 
+.delete-btn {
+    @include delete-btn;
+}
 
+.delete-btn:hover {
+    @include delete-btn-hover
+}
 
+.edit-btn {
+    @include edit-btn
+}
 
+.edit-btn:hover {
+    @include edit-btn-hover
+}
 </style>
