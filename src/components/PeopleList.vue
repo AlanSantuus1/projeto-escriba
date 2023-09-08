@@ -1,6 +1,9 @@
 <template>
     <div>
         <div id="people-table">
+            <div class="input-container">
+                <input type="text" placeholder="Buscar por um Nome" v-model="searchQuery">
+            </div>
             <div>
                 <div id="people-table-heading">
                     <div class="people-id">#</div>
@@ -11,7 +14,7 @@
                 </div>
             </div>
             <div id="people-table-rows">
-                <div class="people-table-row" v-for="pessoa in pessoas" :key="pessoa.id">
+                <div class="people-table-row" v-for="pessoa in filteredData" :key="pessoa.id">
                     <div class="people-number">{{ pessoa.id }}</div>
                     <div>{{ pessoa.nome }}</div>
                     <div>{{ pessoa.cpf }}</div>
@@ -67,7 +70,20 @@ export default {
             form: false,
             campoObgNome: false,
             campoObgCpf: false,
-            campoInvalidoCpf: false
+            campoInvalidoCpf: false,
+            searchQuery: ''
+        }
+    },
+    computed: {
+        filteredData: function() {
+            return this.pessoas.filter((items) => {
+            for (var item in items) {
+                if(String(items[item]).indexOf(this.searchQuery) !== -1) {
+                    return true
+                }
+            }
+            return false
+            })
         }
     },
     methods: {
